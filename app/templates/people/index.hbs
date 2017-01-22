@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="page-header">
+        <h1>Lista de sobreviventer</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="list-group people">
+                {{#each model as |people|}}
+                <li class="list-group-item">
+                    {{people.name}}: infectado: <em>{{people.infected}}</em>
+                    <span class="rating pull-right">{{song.id}}</span>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
