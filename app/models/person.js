@@ -6,6 +6,5 @@ export default DS.Model.extend({
     age: DS.attr(),
     gender: DS.attr(),
     lonlat: DS.attr(),
-    items: DS.attr(),
-    infected: DS.attr()
+    items: DS.attr()
 });

@@ -10,10 +10,29 @@ export default Ember.Component.extend({
             ),
             zoom: this.get('zoom')
         };
-        new window.google.maps.Map(container, options);
+        var map = new window.google.maps.Map(container, options);
+        let marker = undefined;
+
+        map.addListener('click', function (e) {
+            if (marker) {
+                marker.setMap(null);
+            }
+            marker = new google.maps.Marker({
+                position: e.latLng,
+                map: map,
+                title: e.LatLng
+            });
+            Ember.$('#lonlat')[0].value = e.latLng.lng() + " " + e.latLng.lat();
+        });
+
     }.on('didInsertElement'),
 
-    addMarker: function () {
-        console.log('asdg');
+    actions: {
+        addMarker: function (map, latlng) {
+            new google.maps.Marker({
+                position: myLatLng,
+                map: map
+            });
+        }
     }
 });
