@@ -13,6 +13,24 @@ export default Ember.Component.extend({
         var map = new window.google.maps.Map(container, options);
         let marker = undefined;
 
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                
+                map.setCenter(new google.maps.LatLng(latitude, longitude));
+                map.setZoom(20);
+                if (!marker) {
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(latitude, longitude),
+                        map: map
+                    });
+                }
+                Ember.$('#lonlat')[0].value = longitude + " " + latitude;
+
+            });
+        }
+
         map.addListener('click', function (e) {
             if (marker) {
                 marker.setMap(null);

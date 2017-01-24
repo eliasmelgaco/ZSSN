@@ -3,9 +3,6 @@ import DS from 'ember-data';
 export default DS.RESTAdapter.extend({
     host: 'http://zssn-backend-example.herokuapp.com',
     namespace: 'api',
-    /*headers: Ember.computed(function(){
-		return {"Accept": "application/json; charset=utf-8"};
-	}),*/
 
     createRecord(store, type, snapshot) {
         var data = this.serialize(snapshot, { includeId: true });
