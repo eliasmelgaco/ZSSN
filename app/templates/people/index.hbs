@@ -2,16 +2,20 @@
     <div class="page-header">
         <h1>Lista de sobreviventes</h1>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <ul class="list-group people">
+    {{!--<div class="row">
+        <div class="col-md-6">--}}
+            <ul class="demo-list-icon mdl-list">
                 {{#each model as |people|}}
-                <li class="list-group-item">
-                    {{people.name}}: idade: <em>{{people.age}}</em>
-                    <span class="rating pull-right">{{people.gender}}</span>
-                </li>
+                    <li class="mdl-list__item">
+                        {{!--{{people.name}}: idade: <em>{{people.age}}</em>
+                        <span class="rating pull-right">{{people.gender}}</span>--}}
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon">person</i>
+                            {{people.name}}
+                        </span>
+                    </li>
                 {{/each}}
             </ul>
-        </div>
-    </div>
+        {{!--</div>
+    </div>--}}
 </div>

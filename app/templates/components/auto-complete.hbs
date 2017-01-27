@@ -1,9 +1,24 @@
 {{yield}} 
 {{input value=query}}
 <ul>
-    {{#each peopleFiltered as |people|}}
+    {{!--{{#each peopleFiltered as |people|}}
     <li>
         {{people.name}}
     </li>
-    {{/each}}
+    {{/each}}--}}
+            <ul class="demo-list-icon mdl-list" style="width:400px">
+                {{#each peopleFiltered as |people|}}
+                    <li class="mdl-list__item">
+                        {{!--{{people.name}}: idade: <em>{{people.age}}</em>
+                        <span class="rating pull-right">{{people.gender}}</span>--}}
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon">person</i>
+                            {{people.name}}
+                        </span>
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" {{action "select"}}>
+                            <i class="material-icons">done</i>
+                        </button>
+                    </li>
+                {{/each}}
+            </ul>
 </ul>

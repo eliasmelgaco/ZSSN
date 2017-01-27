@@ -21,6 +21,9 @@ module.exports = function (defaults) {
   // along with the exports of each module as its value.
 
   app.import('vendor/gmaps.js');
+  //app.import('vendor/materialIcons');
+  //app.import('node_modules/material-design-lite/material.min.css');
+  //app.import('node_modules/material-design-lite/material.min.js');
 
   return app.toTree();
 };

@@ -6,12 +6,8 @@ export default Ember.Route.extend({
     },
 
     actions: {
-        searchSurvivor(d) {
-            var o = this.store.queryRecord('person', { name: 'Eliaz', include: 'all' }).then(function (data) {
-                // do something with `data`
-                debugger
-                console.log('passei aqui')
-            });
+        select() {
+            console.log('passei');
         }
     }
 });
