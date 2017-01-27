@@ -1,25 +1,27 @@
 {{outlet}}
 <form id="form-register" class="form-inline ">
-    Name:<br>
-    <input type="text" id="name" placeholder="Ex., Don Juan"><br> Age:<br>
-    <input type="number" id="age" placeholder="Ex., 34" style="width: 70px"><br> Gender:<br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Ex., Don Juan"><br/>
+    <label for="age">Age:</label>
+    <input type="number" id="age" placeholder="Ex., 34" style="width: 70px"><br/>
+    <label for="gender">Gender:</label><br/>
     <input type="radio" id="genderM" name="gender" value="M" checked> Male<br>
     <input type="radio" id="genderF" name="gender" value="F"> Female<br>
-    Last Location:<br>
-    <input type="text" id="lonlat"><br>
+    <label for="lonlat">Last Location:</label>
+    <input type="text" id="lonlat"><br/>
     {{google-map latitude="-10.0133268" longitude="-51.1145139" zoom=8}}
     <div>
-        Inventory:<br>
+        <label for="name">Inventory:</label><br>
         <table style="width: 150px">
             <tr>
                 <td>
                     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                         <path fill="#000000" d="M12,20A6,6 0 0,1 6,14C6,10 12,3.25 12,3.25C12,3.25 18,10 18,14A6,6 0 0,1 12,20Z" />
                     </svg>
-                    Water:
+                    <label for="water">Water:</label>
                 </td>
                 <td>
-                    <input type="number" id="water" style="width: 40px">
+                    <input type="number" id="water" style="width: 40px" min="0">
                 </td>
             </tr>
             <tr>
@@ -27,27 +29,29 @@
                     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                         <path fill="#000000" d="M20,10C22,13 17,22 15,22C13,22 13,21 12,21C11,21 11,22 9,22C7,22 2,13 4,10C6,7 9,7 11,8V5C5.38,8.07 4.11,3.78 4.11,3.78C4.11,3.78 6.77,0.19 11,5V3H13V8C15,7 18,7 20,10Z" />
                     </svg>
-                    Food:
+                    <label for="food">Food:</label>
                 </td>
                 <td>
-                    <input type="number" id="food" style="width: 40px">
+                    <input type="number" id="food" style="width: 40px" min="0">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="medication">Medication:</label>
+                </td>
+                <td>
+                    <input type="number" id="medication" style="width: 40px" min="0">
                 </td>
             </tr>
             <tr>
                 <td>
-                    Medication:
+                    <label for="ammunition">Ammunition:</label>
                 </td>
                 <td>
-                    <input type="number" id="medication" style="width: 40px">
-                </td>
-            </tr>
-            <tr>
-                <td>Ammunition:</td>
-                <td>
-                    <input type="number" id="ammunition" style="width: 40px">
+                    <input type="number" id="ammunition" style="width: 40px" min="0">
                 </td>
             </tr>
         </table>
     </div>
-    <button class="btn btn-primary pull-right" {{action "register"}}>Create board</button>
+    <button class="btn btn-primary pull-right" {{action "register"}}>Register</button>
 </form>

@@ -7,7 +7,8 @@ export default DS.RESTAdapter.extend({
     createRecord(store, type, snapshot) {
         var data = this.serialize(snapshot, { includeId: true });
         var me = this;
-        return new Ember.RSVP.Promise(function (resolve, reject) {
+        //return new Ember.RSVP.Promise(function (resolve, reject) {
+        return new Ember.RSVP.Promise(function () {
             Ember.$.ajax({
                 type: 'POST',
                 url: me.host + '/' + me.namespace + '/' + Ember.String.pluralize(type.modelName),
@@ -15,9 +16,9 @@ export default DS.RESTAdapter.extend({
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(data),
             }).then(function (data) {
-                console.log('cadastrado com sucesso');
+                console.log('cadastrado com sucesso', data);
             }, function (jqXHR) {
-                console.log('erro no cadastro');
+                console.log('erro no cadastro', jqXHR);
             });
         });
     }

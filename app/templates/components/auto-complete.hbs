@@ -1,0 +1,9 @@
+{{yield}} 
+{{input value=query}}
+<ul>
+    {{#each peopleFiltered as |people|}}
+    <li>
+        {{people.name}}
+    </li>
+    {{/each}}
+</ul>

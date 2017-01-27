@@ -5,10 +5,12 @@ export default Ember.Route.extend({
         register() {
             var items = "";
             function setItems(item){
-                if(items != "")
+                if(items !== ""){
                     items += ";" + item;
-                else
+                }
+                else{
                     items = item;
+                }
             }
             var form = Ember.$('#form-register')[0];
             
@@ -17,14 +19,18 @@ export default Ember.Route.extend({
                 gender = "F";
             }
             
-            if (form.elements['water'].value != "" && form.elements['water'].value != 0)
+            if (form.elements['water'].value !== "" && form.elements['water'].value !== 0){
                 setItems("Water:" + form.elements['water'].value);
-            if (form.elements['food'].value != "" && form.elements['food'].value != 0)
+            }
+            if (form.elements['food'].value !== "" && form.elements['food'].value !== 0){
                 setItems("Food:" + form.elements['food'].value);
-            if (form.elements['medication'].value != "" && form.elements['medication'].value != 0)
+            }
+            if (form.elements['medication'].value !== "" && form.elements['medication'].value !== 0){
                 setItems("Medication:" + form.elements['medication'].value);
-            if (form.elements['ammunition'].value != "" && form.elements['ammunition'].value != 0)
+            }
+            if (form.elements['ammunition'].value !== "" && form.elements['ammunition'].value !== 0){
                 setItems("Ammunition:" + form.elements['ammunition'].value);
+            }
             var person = this.store.createRecord('person', {
                 name: form.elements['name'].value,
                 age: form.elements['age'].value,

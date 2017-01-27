@@ -11,7 +11,7 @@ export default Ember.Component.extend({
             zoom: this.get('zoom')
         };
         var map = new window.google.maps.Map(container, options);
-        let marker = undefined;
+        let marker;
 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -26,8 +26,8 @@ export default Ember.Component.extend({
                         map: map
                     });
                 }
-                Ember.$('#lonlat')[0].value = longitude + " " + latitude;
-
+                //Ember.$('#lonlat')[0].value = longitude + " " + latitude;
+                
             });
         }
 
@@ -40,17 +40,17 @@ export default Ember.Component.extend({
                 map: map,
                 title: e.LatLng
             });
-            Ember.$('#lonlat')[0].value = e.latLng.lng() + " " + e.latLng.lat();
+            //Ember.$('#lonlat')[0].value = e.latLng.lng() + " " + e.latLng.lat();
         });
 
     }.on('didInsertElement'),
 
-    actions: {
+    /*actions: {
         addMarker: function (map, latlng) {
             new google.maps.Marker({
                 position: myLatLng,
                 map: map
             });
         }
-    }
+    }*/
 });

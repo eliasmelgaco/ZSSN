@@ -9,7 +9,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('people', function() {
     this.route('register');
+    this.route('updateLocation');
   });
+  this.route('auto-complete');
 });
 
 export default Router;

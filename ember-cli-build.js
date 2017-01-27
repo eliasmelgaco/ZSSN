@@ -21,6 +21,6 @@ module.exports = function (defaults) {
   // along with the exports of each module as its value.
 
   app.import('vendor/gmaps.js');
-  
+
   return app.toTree();
 };

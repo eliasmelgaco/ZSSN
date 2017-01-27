@@ -1,0 +1,12 @@
+{{outlet}}
+{{!--<label for="survivor">Survivor</label>
+    {{input action="searchSurvivor" on="key-press"}}
+<select id="survivor">
+    {{#each model as |people|}}
+        <option name={{people.id}}>
+            {{people.name}}
+        </option>
+    {{/each}}
+</select> --}}
+{{auto-complete model=model}}
+{{google-map latitude="-10.0133268" longitude="-51.1145139" zoom=8}}
